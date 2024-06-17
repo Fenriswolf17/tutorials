@@ -15,8 +15,12 @@ saturation = 155
 saturation_range = 100
 value = 155
 value_range = 100
-lower_green = np.array([hue - hue_range, saturation - saturation_range, value - value_range])
-upper_green = np.array([hue + hue_range, saturation + saturation_range, value + value_range])
+lower_green = np.array(
+    [hue - hue_range, saturation - saturation_range, value - value_range]
+)
+upper_green = np.array(
+    [hue + hue_range, saturation + saturation_range, value + value_range]
+)
 
 # Load image
 img = cv2.imread("./tutorials/data/images/smarties01.JPG", cv2.IMREAD_COLOR)
@@ -28,8 +32,8 @@ hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 # Create a mask
 mask = cv2.inRange(hsv, lower_green, upper_green)
 
-# TODO Modify the masked image with dilation or erosion in orer to avoid very small connected compotions 
-# -> use Morphological operations code
+# TODO Modify the mask image with dilation or erosion 
+# in order to avoid very small connected components
 
 # TODO Find connected components
 

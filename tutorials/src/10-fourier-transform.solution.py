@@ -82,7 +82,7 @@ def main():
     cv2.namedWindow(title_result, cv2.WINDOW_NORMAL)
     cv2.resizeWindow(title_result, window_width, window_height)
     cv2.imshow(title_result, result)
-
+    
     back = create_from_spectrum(mag, phase)
 
     # And compute image back from frequencies

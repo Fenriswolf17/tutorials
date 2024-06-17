@@ -140,3 +140,20 @@ tutorials/data/myimages/
 
 # training runs from ultralytics
 runs/
+
+# macos image folders
+.DS_Store
+**/.DS_Store
+
+# further temporary experiments
+tutorials/data/images/apple.jpeg
+tutorials/data/images/einstein.bmp
+tutorials/data/images/orange.jpeg
+tutorials/data/images/worm.jpeg
+tutorials/src/gradientAngles.py
+tutorials/src/tmp-blending.py
+tutorials/src/tmp-pyramid.py
+tutorials/src/utils/download_images.py
+tutorials/src/utils/launch_fiftyone.py
+sandbox/draw.py
+sandbox/outline.py

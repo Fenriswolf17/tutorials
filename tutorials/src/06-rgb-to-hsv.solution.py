@@ -80,7 +80,8 @@ value_range = 100
 # Implement the callback to pick the color on double click
 def color_picker(event, x, y, flags, param):
     global hue, saturation, value
-    if event == cv2.EVENT_LBUTTONDBLCLK:
+    # handle win and mac events
+    if event == cv2.EVENT_LBUTTONDBLCLK or event == 4:
         (h, s, v) = hsv[y, x]
         hue = int(h)
         saturation = int(s)

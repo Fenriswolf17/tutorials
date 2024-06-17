@@ -68,7 +68,11 @@ A demonstration of object detection using a pre-trained deep neural network. Hea
 Image classification with k-nearest neighbor approach using the CIFAR-10 data. The code is similar to the one used in assignment #4 and hence a bit cluttered.
 
 ### Tutorial #21
-A more modern demonstration of object detection that also uses a pre-trained deep neural network. This example uses the [Ultralytics YoloV8 model] (https://docs.ultralytics.com/).
+A more modern demonstration of object detection that also uses a pre-trained deep neural network. This example uses the [Ultralytics YoloV8 model](https://docs.ultralytics.com/).
 
 ### Tutorial #22
-A simple demonstration of the creation of your own image classification model, automatically downloading images from a search engine and training it on the pre-trained [Ultralytics yolov8n-cls model] (https://docs.ultralytics.com/).
+A simple demonstration of the creation of your own image classification model, manually downloading images from a search engine using the [duckduckgo script](./src/utils/duckduckgo_image_search.py) and training it on the pre-trained [Ultralytics yolov8n-cls model](https://docs.ultralytics.com/).
+You need to install the following modules:
+```
+pip install fastai duckduckgo_search ultralytics
+````

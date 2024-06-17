@@ -1,7 +1,7 @@
 # Tutorial #12
 # ------------
 #
-# Select three points in two images and compute the appropriate affine transformation. Inspired by
+# Click three points in two images and compute the appropriate affine transformation. Inspired by
 # https://www.pyimagesearch.com/2015/03/09/capturing-mouse-click-events-with-python-and-opencv/
 
 import numpy as np
@@ -47,15 +47,23 @@ def click_dst(event, x, y, flags, param):
 img = cv2.imread('data/images/nl_clown.jpg', cv2.IMREAD_COLOR)
 img = cv2.resize(img, (400, 400), interpolation=cv2.INTER_CUBIC)
 
-# TODO Initialize needed variables and windows including mouse callbacks
+# Helper variables and image clone for reset
+rows, cols, dim = img.shape
+clone = img.copy()
+dst_transform = np.zeros(img.shape, np.uint8)
+# TODO Initialize windows including mouse callbacks
 
 # Keep looping until the 'q' key is pressed
 computationDone = False
 while True:
 
-    # TODO If there are three reference points, then compute the transformation matrix 
-    #(using cv2.getAffineTransform) and apply it
+    # TODO Change the condition to check if there are three reference points clicked
     if not (computationDone):
+        # TODO Compute the transformation matrix (using cv2.getAffineTransform)
+        
+        # TODO print its values
+        
+        # TODO and apply it with cv2.warpAffine
 
         # TODO Display the image and wait for a keypress
 

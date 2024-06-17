@@ -17,21 +17,31 @@ def click_src(event, x, y, flags, param):
     # Grab references to the global variables
     global ref_pt_src
     # If the left mouse button was clicked, add the point to the source array
-
+    if(event == cv2.EVENT_LBUTTONDOWN):
+        pos = len(ref_pt_src)
+        if(pos == 0):
+            ref_pt_src = [(x,y)]
+        else:
+            ref_pt_src.append((x,y))
     # in if block: Draw a circle around the clicked point
-
+        cv2.circle(img, ref_pt_src[pos], 4, (255,0,0), 2)
     # in if block: Redraw the image
-
+        cv2.imshow("Original", img)
 
 def click_dst(event, x, y, flags, param):
     # Grab references to the global variables
     global ref_pt_dst
     # If the left mouse button was clicked, add the point to the source array
-
-    # in if block: Draw a circle around the clicked point
-
+    if(event == cv2.EVENT_LBUTTONDOWN):
+        pos = len(ref_pt_dst)
+        if(pos == 0):
+            ref_pt_dst = [(x,y)]
+        else:
+            ref_pt_dst.append((x,y))
+        # in if block: Draw a circle around the clicked point
+        cv2.circle(img, ref_pt_src[pos], 4, (255,0,0), 2)
     # in if block: Redraw the image
-
+        cv2.imshow("Transformed", img)
 
 # Load image and resize for better display
 img = cv2.imread('data/images/nl_clown.jpg', cv2.IMREAD_COLOR)
@@ -43,7 +53,8 @@ img = cv2.resize(img, (400, 400), interpolation=cv2.INTER_CUBIC)
 computationDone = False
 while True:
 
-    # TODO If there are three reference points, then compute the transform and apply the transformation
+    # TODO If there are three reference points, then compute the transformation matrix 
+    #(using cv2.getAffineTransform) and apply it
     if not (computationDone):
 
         # TODO Display the image and wait for a keypress

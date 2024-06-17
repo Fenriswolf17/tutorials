@@ -78,7 +78,7 @@ mask = closing(mask, kernel_size, kernel_shape)
 
 # Find connected components
 connectivity = 8
-(numLabels, labels, stats, centroids) = cv2.connectedComponentsWithStats(mask, connectivity, cv2.CV_32S)
+
 
 # Helper variables for drawing and candidate rejection
 red_BGR = (0, 0, 255)
